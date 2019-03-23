@@ -1,0 +1,14 @@
+syntax = "proto2";
+
+package ProtoMessage;
+
+message MemTrace {
+    required uint64 address = 1;
+    enum ReadWrite {
+        READ = 0;
+        WRITE = 1;
+    }
+
+    required ReadWrite rw = 2;
+
+}
