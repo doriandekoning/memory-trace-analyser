@@ -57,7 +57,6 @@ func main() {
 		curOffset += int(nextMessagesize)
 		traces = append(traces, trace)
 	}
-	//TODO can the address range be stored in the header of the trace (along with type of memory)?
 	reads, writes := traces.seperateReadWritesPerPage()
 	fmt.Println("-----------------------\nTrace statistics:")
 	fmt.Println("The trace was recorded at:", time.Unix(int64(traceHeader.GetTimestamp()), 0))
