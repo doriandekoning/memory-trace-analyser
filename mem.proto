@@ -2,6 +2,28 @@ syntax = "proto2";
 
 package ProtoMessage;
 
+
+message MemHeader {
+    required uint64 tick_frequency = 1; //READ
+    required uint64 timestamp = 2; //READ
+    required CacheInfo cache = 3; //READ
+    required MemoryRegion memory_region = 4; //REAd
+}
+
+message CacheInfo {
+    required uint64 l1_data_size = 1;//SET //READ
+    required uint64 l1_inst_size = 2;//SET //READ
+    required uint64 l2_size = 3;//SET //READ
+    //TODO maybe latencies
+}
+
+message MemoryRegion {
+    required uint64 start_addr = 1; //READ
+    required uint64 end_addr = 2; //READ
+    //TODO memory latency information
+    
+}
+
 message MemTrace {
     required uint64 address = 1;
     enum ReadWrite {
@@ -10,5 +32,6 @@ message MemTrace {
     }
 
     required ReadWrite rw = 2;
+    required uint64 cycle = 3;
 
 }
