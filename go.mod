@@ -7,4 +7,7 @@ require (
 	github.com/golang/protobuf v1.3.1
 	github.com/mattn/go-colorable v0.1.1 // indirect
 	github.com/mattn/go-isatty v0.0.7 // indirect
+	github.com/pkg/profile v1.4.0
 )
+
+go 1.13
